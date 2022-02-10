@@ -1,11 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LoginComponent } from './login.component';
@@ -41,12 +40,12 @@ describe('LoginComponent', () => {
   it('Debe retornar formulario invalido', () => {
     const fixture = TestBed.createComponent(LoginComponent);
     const app = fixture.componentInstance
-    fixture.detectChanges() //TODO: <---------------
+    fixture.detectChanges() 
 
     const email = app.loginForm.controls['email']
     email.setValue('robercidre@gmail.com')
 
-    expect(app.loginForm.invalid).toBeTrue(); //TODO: ✔
+    expect(app.loginForm.invalid).toBeTrue();
   });
 
   it('Debe retornar formulario valido', () => {
@@ -63,7 +62,7 @@ describe('LoginComponent', () => {
     remind.setValue(true)
 
 
-    expect(app.loginForm.invalid).toBeFalse(); //TODO: ✔
+    expect(app.loginForm.invalid).toBeFalse();
   });
 
     it(`El formulario devuelve los datos correctamente`, () => {
