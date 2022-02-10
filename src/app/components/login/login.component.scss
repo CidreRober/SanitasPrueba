@@ -1,53 +1,91 @@
-.body {
+.background {
+  background: url(./../../../assets/images/background.jpg);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  text-align: center;
+
+  .body {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
+
+    .login {
+      width: 100%;
+      max-width: 330px;
+      padding: 15px;
+      margin: auto;
+      text-align: center;
+      background-color: white;
+
+      .logo {
+        width: 40%;
+        height: 80%;
+      }
+
+      .w-80 {
+        width: 80%;
+      }
+
+      .invalidEmail {
+        width: 70%;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        color: red;
+      }
+      
+      .invalidPassword {
+        width: 97%;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        color: red;
+      }
+      
+      .remindContainer {
+        display: flex;
+        margin-bottom: 10px;
+
+        .remindText {
+          width: 50%;
+          display: flex;
+          justify-content: flex-start;
+      }
+
+      .remindToogle {
+        display: flex;
+        justify-content: flex-end;
+        width: 50%;
+    }
+
+      }
+
+      .btnRadius {
+        border-radius: 20px;
+        color: white;
+        &:hover {
+          background-color: #ff6;
+          color: black;
+        }
+    }
+
+    }
+
   }
 
-  .login {
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    margin: auto;
-    text-align: center;
-    background-color: white;
-  }
-
-  .logo {
-    width: 40%;
-    height: 80%;
-  }
-
-  .w-80 {
-    width: 80%;
-  }
-
-  .background {
-    background: url(./../../../assets/images/background.jpg);
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    text-align: center;
 }
 
-.btnRadius {
-    border-radius: 20px;
-}
 
-.remindContainer {
-    display: flex;
-    margin-bottom: 10px;
-}
 
-.remindText {
-    width: 50%;
-    display: flex;
-    justify-content: flex-start;
-}
 
-.remindToogle {
-    display: flex;
-    justify-content: flex-end;
-    width: 50%;
-}
+
+
+
+
+
+
+
+
+
+
+
