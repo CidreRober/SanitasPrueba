@@ -1,0 +1,37 @@
+<div class="background">
+<div class="body">
+    <div class="login">
+        <form [formGroup]="loginForm">
+        <img class="logo" src="./../../../assets/images/logo.jpg">
+        <h1 class="h3 mb-3 fw-normal">Prueba técnica</h1>
+        <mat-form-field class="w-80" appearance="fill">
+            <mat-label>Email</mat-label>
+            <mat-icon matPrefix>person</mat-icon>
+            <input formControlName="email" type="email" matInput>
+          </mat-form-field>
+          <mat-form-field class="w-80" appearance="fill">
+            <mat-icon matPrefix>lock</mat-icon>
+            <mat-label>Contraseña</mat-label>
+            <input formControlName="password" type="password" matInput>
+          </mat-form-field>
+          <br>
+          <div class="remindContainer">
+            <div class="remindText">
+                Recordar
+            </div>
+            <div class="remindToogle">
+                <mat-slide-toggle
+                formControlName="remind"
+                class="example-margin"
+                [color]="color"
+                [checked]="checked"
+                [disabled]="disabled">
+            </mat-slide-toggle>
+            </div>
+
+          </div>
+          <button [disabled]="!loginForm.valid" (click)="doLogin()" class="btnRadius w-80" mat-raised-button mat-button color="primary">Acceder</button>
+        </form>
+    </div>
+</div>
+</div>
