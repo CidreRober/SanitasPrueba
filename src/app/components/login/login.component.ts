@@ -17,16 +17,23 @@ export class LoginComponent implements OnInit {
     this.createForm();
   }
 
-  createForm(): void {
+  public doLogin(): void {
+    console.log("ok", this.loginForm.value);
+  }
+
+  public checkFormFieldIsValid(fieldName: string): boolean {
+   if  (this.loginForm.controls[fieldName].invalid && (this.loginForm.controls[fieldName].dirty || this.loginForm.controls[fieldName].touched)) {
+     return true;
+   } else {
+     return false;
+   }
+  }
+  
+  private createForm(): void {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
       password: ['', [Validators.required, Validators.minLength(5)]],
       remind: [null]
     });
   }
-
-  doLogin(): void {
-    console.log("ok", this.loginForm.value);
-  }
-
 }

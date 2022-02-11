@@ -9,7 +9,7 @@
             <mat-icon matPrefix>person</mat-icon>
             <input formControlName="email" type="email" matInput>
           </mat-form-field>
-          <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class="alert">
+          <div *ngIf="checkFormFieldIsValid('email')" class="alert">
             <div class="invalidEmail">
             Introduce un email válido
           </div>
@@ -19,7 +19,7 @@
             <mat-label>Contraseña</mat-label>
             <input formControlName="password" type="password" matInput>
           </mat-form-field>
-          <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert">
+          <div *ngIf="checkFormFieldIsValid('password')" class="alert">
             <div class="invalidPassword">
             La contraseña tiene que tener al menos 5 carácteres
           </div>

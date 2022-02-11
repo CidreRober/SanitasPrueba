@@ -6,7 +6,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { LoginComponent } from './login.component';
 
 describe('LoginComponent', () => {
@@ -38,48 +37,35 @@ describe('LoginComponent', () => {
   });
 
   it('Debe retornar formulario invalido', () => {
-    const fixture = TestBed.createComponent(LoginComponent);
-    const app = fixture.componentInstance
-    fixture.detectChanges() 
-
-    const email = app.loginForm.controls['email']
+    const email = component.loginForm.controls['email']
     email.setValue('robercidre@gmail.com')
 
-    expect(app.loginForm.invalid).toBeTrue();
+    expect(component.loginForm.invalid).toBeTrue();
   });
 
   it('Debe retornar formulario valido', () => {
-    const fixture = TestBed.createComponent(LoginComponent);
-    const app = fixture.componentInstance
-    fixture.detectChanges()
-
-    let email = app.loginForm.controls['email']
-    let password = app.loginForm.controls['password']
-    let remind = app.loginForm.controls['remind']
+    let email = component.loginForm.controls['email']
+    let password = component.loginForm.controls['password']
+    let remind = component.loginForm.controls['remind']
 
     email.setValue('robercidre@gmail.com')
     password.setValue('123456')
     remind.setValue(true)
 
-
-    expect(app.loginForm.invalid).toBeFalse();
+    expect(component.loginForm.invalid).toBeFalse();
   });
 
     it(`El formulario devuelve los datos correctamente`, () => {
-     const fixture = TestBed.createComponent(LoginComponent);
-     const app = fixture.componentInstance;
-     fixture.detectChanges()
-
-     let email = app.loginForm.controls['email']
-     let password = app.loginForm.controls['password']
-     let remind = app.loginForm.controls['remind']
+     let email = component.loginForm.controls['email']
+     let password = component.loginForm.controls['password']
+     let remind = component.loginForm.controls['remind']
 
      email.setValue('robercidre@gmail.com')
      password.setValue('123456')
      remind.setValue(false);
 
      const testData = { email: 'robercidre@gmail.com', password: '123456', remind: false }
-     expect(app.loginForm.value).toEqual(testData)
+     expect(component.loginForm.value).toEqual(testData)
    });
 
 });
