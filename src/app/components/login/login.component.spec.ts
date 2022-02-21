@@ -68,4 +68,16 @@ describe('LoginComponent', () => {
      expect(component.loginForm.value).toEqual(testData)
    });
 
+   it(`Comprueba que un campo del formulario no es válido`, () => {
+    component.loginForm.controls['email'].setValue('robercidre');
+    component.loginForm.controls['email'].markAsDirty();
+    expect(component.checkFormFieldIsValid('email')).toBeTruthy();
+  });
+
+  it(`Comprueba que un campo del formulario es válido`, () => {
+    component.loginForm.controls['email'].setValue('robercidre@gmail.com');
+    component.loginForm.controls['email'].markAsTouched();
+    expect(component.checkFormFieldIsValid('email')).toBeFalse();
+  });
+
 });
